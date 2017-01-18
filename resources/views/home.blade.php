@@ -8,6 +8,7 @@
                 <h1 class="text-center margin-top-100 editContent">
                     Iron Web Test
                 </h1>
+                <p><a href="/articles/create">Create an article</a></p>
                 </div>
             </div> 
         </div>
