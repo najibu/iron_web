@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Answer;
 use Illuminate\Http\Request;
+use App\Http\Requests\AnswerFormRequest;
 
 class AnswersController extends Controller
 {
@@ -32,9 +34,17 @@ class AnswersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnswerFormRequest $request)
     {
-        //
+        $answer = new Answer(array(
+            'name' => $request->get('name'),
+            'answer' => $request->get('answer'),
+            'rating' => $request->get('rating'),
+        ));
+
+        $answer->save();
+
+        return redirect('/answers/create')->with('status', 'The answer has been created!');
     }
 
     /**
