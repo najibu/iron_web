@@ -26,7 +26,7 @@
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         @if (Auth::check())
-                            <li><a href="/logout">Logout</a></li>
+                            <li><a href="{{ url('logout') }}" class="btn btn-default">Logout</a></li>
                         @else
                             <li><a href="/register">Register</a></li>
                             <li><a href="/login">Login</a></li>
