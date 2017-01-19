@@ -9,7 +9,7 @@ class Answer extends Model
 {
     public function article()
     {
-      return $this->belongsTo('Article');
+      return $this->belongsTo('App\Article');
     }
     protected $guarded = ['id'];
 }

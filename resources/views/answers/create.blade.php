@@ -30,19 +30,8 @@
                     </div>
                     <div class="form-group">
                         <label for="rating" class="col-lg-2 control-label">Rating</label>
-                        <div class="col-lg-10">
-                            <div class="rating-wrapper">
-                              <input type="radio" class="rating-input" id="rating-5" name="rating" />
-                              <label for="rating-5" class="rating-star"></label>
-                              <input type="radio" class="rating-input" id="rating-4" name="rating" />
-                              <label for="rating-4" class="rating-star"></label>
-                              <input type="radio" class="rating-input" id="rating-3" name="rating" />
-                              <label for="rating-3" class="rating-star"></label>
-                              <input type="radio" class="rating-input" id="rating-2" name="rating" />
-                              <label for="rating-2" class="rating-star"></label>
-                              <input type="radio" class="rating-input" id="rating-1" name="rating" />
-                              <label for="rating-1" class="rating-star"></label>
-                            </div>
+                        <div class="col-lg-10">             
+                              <input type="number" id="rating" class="form-control" min="0" max="5" name="rating" />
                         </div>
                     </div>
 

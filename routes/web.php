@@ -16,6 +16,7 @@ Route::get('/', 'PagesController@home');
 // Articles 
 Route::get('articles/create', 'ArticlesController@create');
 Route::post('articles/create', 'ArticlesController@store');
+Route::get('/article/{id?}', 'ArticlesController@show');
 
 //Answers
 Route::get('answers/create', 'AnswersController@create');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use App\Answer;
 use Illuminate\Http\Request;
 use App\Http\Requests\ArticleFormRequest;
 
@@ -43,7 +44,11 @@ class ArticlesController extends Controller
 
         $article->save();
 
-        return redirect('/articles/create')->with('status', 'The article has been created!');
+        try {
+            return response()->json($article, 201);
+        } catch (Exception $e) {
+            return response()->json(['message' => $e->getMessage()], 500);
+        }
     }
 
     /**
@@ -54,7 +59,10 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = Article::whereId($id)->firstOrFail();
+        $answers = Answer::Where('article_id', $id)->get();
+
+        return response()->json([$article, $answers]);
     }
 
     /**
