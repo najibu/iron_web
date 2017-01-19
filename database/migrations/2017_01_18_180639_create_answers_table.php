@@ -17,7 +17,7 @@ class CreateAnswersTable extends Migration
             $table->increments('id');
             $table->integer('article_id')->nullable();
             $table->string('name', 255);
-            $table->text('body');
+            $table->text('answer');
             $table->integer('rating');
             $table->timestamps();
         });

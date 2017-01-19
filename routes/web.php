@@ -16,3 +16,7 @@ Route::get('/', 'PagesController@home');
 // Articles 
 Route::get('articles/create', 'ArticlesController@create');
 Route::post('articles/create', 'ArticlesController@store');
+
+//Answers
+Route::get('answers/create', 'AnswersController@create');
+Route::post('answers/create', 'AnswersController@store');

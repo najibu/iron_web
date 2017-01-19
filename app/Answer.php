@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Article;
 use Illuminate\Database\Eloquent\Model;
 
 class Answer extends Model
@@ -10,4 +11,5 @@ class Answer extends Model
     {
       return $this->belongsTo('Article');
     }
+    protected $guarded = ['id'];
 }
