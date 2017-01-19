@@ -15,13 +15,22 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li class="active"><a href="/">Home</a></li>
-                <li><a href="/">Articles</a></li>
+                <li><a href="/answers/create">Add an answer</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Member 
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                        @if (Auth::check())
+                            {{ Auth::user()->name }} 
+                        @else
+                            Member
+                        @endif
                     <span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="/users/register">Register</a></li>
-                        <li><a href="/users/login">Login</a></li>
+                        @if (Auth::check())
+                            <li><a href="/logout">Logout</a></li>
+                        @else
+                            <li><a href="/register">Register</a></li>
+                            <li><a href="/login">Login</a></li>
+                        @endif
                     </ul>
                 </li>
             </ul>
